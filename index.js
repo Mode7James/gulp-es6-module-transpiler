@@ -17,7 +17,11 @@ module.exports = function (opts) {
 				compiler;
 
 			if (typeof opts.moduleName === "string") {
-				moduleName = opts.moduleName;
+				if (opts.moduleName !== "none"){
+					moduleName = opts.moduleName;
+				} else {
+					moduleName = '';
+				}
 			} else {
 				moduleName = file.relative.slice(0, -ext.length);
 
